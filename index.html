@@ -47,6 +47,24 @@
       img {
         max-width: 100%;
       }
+      input, button {
+        display: block;
+        margin-bottom: 20px;
+        width: 100%;
+      }
+      button {
+        border: 0;
+        background-color: blue;
+        padding: 8px;
+        color: white;
+        border-radius: 3px;
+        width: 50%;
+      }
+      #emailSignUpForm {
+        padding: 10px;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 29%);
+        margin-bottom: 20px;
+      }
       .details {
         text-align: center;
       }
@@ -55,6 +73,12 @@
         box-shadow: 0 2px 4px rgb(0 0 0 / 29%);
         margin-bottom: 20px;
         text-align: right;
+      }
+      .warning {
+        color: red;
+      }
+      .hidden {
+        display: none;
       }
     </style>
 
@@ -124,6 +148,12 @@
       </tr>
     </table>
     <hr />
+    <div id="emailSignUpForm">
+      <p>Enter your email address and get info about upcoming events.</p>
+      <input type="text" id="txtEmail" required />
+      <p class="warning hidden" id="emailWarning">Email is required</p>
+      <button id="btnEmail">Sign Up</button>
+    </div>
     <h2>Films</h2>
     <div class="shortfilm">
       <h4>Light Goes On</h4>
@@ -279,5 +309,36 @@
         src="https://denniscalvert.s3.us-east-2.amazonaws.com/short-film-screening/001.jpg"
       />
     </div>
+    <script>
+      var btnEmail = document.getElementById("btnEmail");
+
+      async function handleEmailSend (email){
+        const rawResponse = await fetch("https://denniscalvert-net-service.herokuapp.com/mailing-list", {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({email: email})
+        });
+        const content = await rawResponse.json();
+        if(content.message) {
+          document.getElementById("emailWarning").innerHTML = content.message;
+          document.getElementById("emailWarning").classList.remove('hidden');
+        } else {
+          document.getElementById("emailSignUpForm").innerHTML = "Thanks for signing up!"
+        }
+        console.log(content);
+      }
+      btnEmail.addEventListener('click', function(e) {
+        var email = document.getElementById("txtEmail").value;
+        if(email.length === 0) {
+          document.getElementById("emailWarning").classList.remove('hidden');
+        } else {
+          document.getElementById("emailWarning").classList.add('hidden');
+          handleEmailSend(email)
+        }
+      })
+    </script>
   </body>
 </html>
