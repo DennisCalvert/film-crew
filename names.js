@@ -44,6 +44,10 @@ Dustin Grandchamp
 Madeline Zink
 Eland Anthony
 Valencia Sanders
+Patrick Williams
+Maggie Lewis
+Mikey Lewis
+Jamye Dennison
 John Rait`
   .split("\n")
   .sort();
