@@ -43,6 +43,7 @@ CJ Steele
 Dustin Grandchamp
 Madeline Zink
 Eland Anthony
+Valencia Sanders
 John Rait`
   .split("\n")
   .sort();
