@@ -12,7 +12,6 @@ Joiya Pams
 Robert Wason
 Willy Williams
 Darrel Nance
-Marcus January Guests
 Michael Shackelford
 Will Devine
 Jaysen Micheal
