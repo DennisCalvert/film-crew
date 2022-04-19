@@ -10,8 +10,8 @@ Jospeh Bodkin
 Preston Beck
 Joiya Pams
 Robert Wason
-Willy Williams Jr
-Willy Williams Sr
+Willie Williams Jr
+Willie Williams Sr
 Darrel Nance
 Michael Shackelford
 Will Devine
