@@ -1,6 +1,4 @@
-const names = `Dennis Calvert
-Lizzie Carmichel
-Tara Merryman
+const names = `Tara Merryman
 Amanda Myers
 Caiti Wroclawski
 Ryan Barker
@@ -32,7 +30,6 @@ Steven Shears
 Chris Gaines
 Jennifer Jeter
 Paul Mathews
-Todd Wiloughby
 Harris Josey
 Nathan Cooke
 Jay Clark
@@ -41,6 +38,9 @@ Mandi Coker
 Matt Hunt
 Shane Hopson
 Marcus January
+Tiffany Frazier
+Corey Winston
+CJ Steele
 Dustin Grandchamp
 Madeline Zink
 Eland Anthony

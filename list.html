@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Guest List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        padding: 15px;
+      }
+      h1,
+      h3 {
+        text-align: center;
+      }
+    </style>
+    <script src="names.js"></script>
+  </head>
+
+  <body translate="no">
+    <h1>Guest List</h1>
+    <hr />
+    <div id="guestList"></div>
+
+    <script>
+      var frag = document.createDocumentFragment();
+      names.forEach((name) => {
+        var pTag = document.createElement("p");
+        pTag.innerHTML = name;
+        frag.appendChild(pTag);
+      });
+      document.getElementById("guestList").appendChild(frag);
+    </script>
+  </body>
+</html>
